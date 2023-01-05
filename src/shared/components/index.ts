@@ -1,3 +1,5 @@
 export * from './upperbar/UpperBar'
 export * from './workcard/WorkCard'
 export * from './githubcard/GithubCard'
+export * from './matrix/Matrix'
+export * from './favicon/Favicon'

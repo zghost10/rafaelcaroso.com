@@ -5,11 +5,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { FormControlLabel, styled, Switch } from '@mui/material';
+import { FormControlLabel, styled, Switch, useTheme } from '@mui/material';
 import { useAppThemeContext } from '../../contexts/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 import { PT } from '../../langs';
 import { useLangContext, useMenuContext } from '../../contexts';
+import { Favicon } from '../favicon/Favicon';
 
 interface Props {
   /**
@@ -69,6 +70,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 const drawerWidth = 240;
 
 export const UpperBar = (props: Props) => {
+  const theme = useTheme()
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const { toggleTheme, themeName } = useAppThemeContext();
@@ -90,7 +92,6 @@ export const UpperBar = (props: Props) => {
   }
 
   const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -100,7 +101,7 @@ export const UpperBar = (props: Props) => {
             variant="h6"
             component="div"
           >
-            LOGO
+            <Favicon height={theme.spacing(6)}/>
           </Typography>
           
           <Box

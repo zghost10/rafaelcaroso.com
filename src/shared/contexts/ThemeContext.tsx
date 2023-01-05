@@ -39,7 +39,6 @@ export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({ children })
           display='flex' 
           flexDirection='column'
           height='100vh'
-          bgcolor={theme.palette.background.default}
         >
           {children}
         </Box>

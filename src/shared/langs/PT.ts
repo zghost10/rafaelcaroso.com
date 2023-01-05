@@ -23,6 +23,7 @@ export const PT = {
   about: {
     title: 'Um pouco sobre mim',
     description: "Olá, meu nome é Rafael Caroso. Sou brasileiro e gosto de tudo relacionado à tecnologia e à programação. Sou também um desenvolvedor web full stack e atualmente moro no Estado da Bahia.",
+    resume: "Currículo",
   },
   contact: {
     title: 'Fale comigo',

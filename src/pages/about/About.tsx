@@ -1,6 +1,6 @@
 import { useTheme } from '@mui/system'
 import { useMediaQuery } from '@mui/material'
-import { Box, Typography, Divider } from "@mui/material"
+import { Box, Typography, Divider, Button } from "@mui/material"
 import { useLangContext } from '../../shared/contexts'
 
 
@@ -36,6 +36,14 @@ export const About = () => {
         <Typography textAlign='justify' variant={smDown?"h6":"h5"}>
           {lang.about.description}
         </Typography>
+      </Box>
+      <Box
+        display='flex'
+        justifyContent={smDown?'center':'end'}
+      >
+        <Button onClick={() => window.open('resume','_BLANK')} variant="text" color='primary'>
+          {lang.about.resume}
+        </Button>
       </Box>
     </Box>
   )

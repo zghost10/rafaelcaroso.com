@@ -2,9 +2,11 @@ import { useTheme } from '@mui/system'
 import { useMediaQuery } from '@mui/material'
 import { Box, Button, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import { useLangContext } from '../../shared/contexts'
+import { useAppThemeContext, useLangContext } from '../../shared/contexts'
+import { Matrix } from '../../shared/components'
 
 export const Home = () => {
+  const { themeName } = useAppThemeContext()
   const navigate = useNavigate()
   const theme = useTheme()
   const smDown = useMediaQuery(theme.breakpoints.down('sm'))
@@ -21,6 +23,7 @@ export const Home = () => {
       alignItems='center'
       gap={2}
     >
+      {themeName==='dark'&&<Matrix/>}
       <Box>
         <Typography variant={smDown?"h3":"h1"}>
           {lang.home.title}

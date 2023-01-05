@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Box, Collapse, Paper } from "@mui/material"
+import { Box, Paper } from "@mui/material"
 import { Outlet } from "react-router-dom"
 import { UpperBar } from "../../components"
 import { styled } from '@mui/material/styles';
 import BottomNav from '../../components/bottom-nav/BottomNav';
-import { useTheme } from '@mui/system'
+import { useTheme } from '@mui/material'
 import { useMediaQuery } from '@mui/material'
+import { useAppThemeContext } from '../../contexts';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -16,6 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export const DefaultLayout = () => {
+  const { themeName } = useAppThemeContext();
   const [expanded, setExpanded] = useState(true);
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
@@ -27,7 +29,7 @@ export const DefaultLayout = () => {
           flex={1}
           py={smDown?10:12}
           display='flex'
-          component="main" 
+          component="main"
           sx={{ px: 3 }}
         >
           <Outlet/>

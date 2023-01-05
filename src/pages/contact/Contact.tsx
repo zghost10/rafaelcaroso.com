@@ -1,7 +1,11 @@
 import { useTheme } from '@mui/system'
-import { useMediaQuery } from '@mui/material'
-import { Box, Typography, Divider } from "@mui/material"
+import { Link, useMediaQuery } from '@mui/material'
+import { Box, Typography, Divider, Button } from "@mui/material"
 import { useLangContext } from '../../shared/contexts'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import { css } from '@emotion/react';
 
 export const Contact = () => {
   const theme = useTheme()
@@ -33,8 +37,52 @@ export const Contact = () => {
         </Typography>
         <Divider/>
         <Typography textAlign='justify' variant={smDown?"h6":"h5"}>
-          @rafaelcaroso
+          
         </Typography>
+        <Link href="mailto:contato@rafaelcaroso.com" color='inherit' underline="none">
+          contato@rafaelcaroso.com
+        </Link>
+        <Box display='flex' gap={1}>
+          <Button
+            variant='contained'
+            endIcon={<InstagramIcon/>}
+            onClick={() => window.open('https://instagram.com/rafaelcaroso','_BLANK')}
+            sx={{
+              bgcolor: '#DD2A7B',
+              "&:hover":{
+                bgcolor: '#8134Af',
+              },
+            }}
+          >
+            Instagram
+          </Button>
+          <Button
+            variant='contained'
+            endIcon={<LinkedInIcon/>}
+            onClick={() => window.open('https://linkedin.com/in/rafael-karoso','_BLANK')}
+            sx={{
+              bgcolor: '#0072B1',
+              "&:hover":{
+                bgcolor: '#0E76A8',
+              },
+            }}
+          >
+            Linkedin
+          </Button>
+          <Button
+            variant='contained'
+            endIcon={<GitHubIcon/>}
+            onClick={() => window.open('https://github.com/zghost10','_BLANK')}
+            sx={{
+              bgcolor: '#171515',
+              "&:hover":{
+                bgcolor: '#333',
+              },
+            }}
+          >
+            Github
+          </Button>
+        </Box>
       </Box>
     </Box>
   )
