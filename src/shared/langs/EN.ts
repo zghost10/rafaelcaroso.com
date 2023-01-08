@@ -16,7 +16,7 @@ export const EN = {
   },
   works: {
     github: {
-      title: 'I can also find me on Github',
+      title: 'You can find me on Github',
       caption: 'I have some public repositories there, then you can see my code spells.',
     },
   },
@@ -26,6 +26,6 @@ export const EN = {
     resume: "Resume",
   },
   contact: {
-    title: "Talk with me",
+    title: "Contact me",
   }
 }
