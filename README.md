@@ -1,2 +1,2 @@
 # rafaelcaroso.com
-This my personal website built with Typescript and Material UI.
+This is my personal website built with Typescript and Material UI.
