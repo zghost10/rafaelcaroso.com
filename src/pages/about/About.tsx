@@ -41,7 +41,7 @@ export const About = () => {
         display='flex'
         justifyContent={smDown?'center':'end'}
       >
-        <Button onClick={() => window.open('resume','_BLANK')} variant="text" color='primary'>
+        <Button onClick={() => window.open('resume.pdf','_BLANK')} variant="text" color='primary'>
           {lang.about.resume}
         </Button>
       </Box>
